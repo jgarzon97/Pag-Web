@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorge Garzon</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link  rel="icon"   href="./img/logo.png" type="image/png" />  
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <img src="./img/logo.png" alt="Logo" width="155">
+            <nav class="menu" aria-label="main-navigation">
+                <ul>
+                    <li><a class="is-active" href="#main">Hola</a></li>
+                    <li><a href="https://github.com/jgarzon97?tab=repositories" target="_blank">Proyectos</a></li>
+                    <li><a href="#contact">Hablemos</a></li>
+                </ul>
+            </nav>
+            <button class="button"><a href="https://jgarzon97.github.io/Galeria-de-fotos/" target="_blank">G a l e r i a</a></button>
+        </header>
+        <section aria-label="main" class="hero" id="main">
+            <div class="hero-image">
+                <img src="./img/fotoJorge.png" alt="Profile picture" width="338" height="330">
+            </div>
+            <div class="hero-description">
+                <h1>
+                    <span>¡Hola</span>
+                    <span>Soy Jorge Garzón!</span>
+                </h1>
+                <p>
+                    Desarrollador Web Jr me gusta mucho de la tecnología.
+                    Siempre buscando cosas nuevas por aprender.
+                    Una frase que siempre tengo presente dice : Desafíate a ti mismo; eres el único que conduces tu crecimiento. 
+                </p>
+                <div class="social">
+                    <a class="button-icon" href="http://github.com/jgarzon97" target="_blank"><img src="./icons/icon-github.svg" alt="github-icon"></a>
+                    <a class="button-icon" href="https://linkedin.com/in/jgarzon97" target="_blank"><img src="./icons/icon-linkedin.svg" alt="linkedin-icon"></a>
+                    <a class="button-icon" href="http://twitter.com/jgarzon97" target="_blank"><img src="./icons/icon-twitter_squared.svg" alt="twitter-icon"></a>
+                    <a class="button-icon" href="mailto:jorgegarzonizquierdo@gmail.com"><img src="./icons/icon-important_mail.svg" alt="mail-icon"></a>
+                    <a class="button-icon" href="tel:+593967213212"><img src="./icons/icon-phone.svg" alt="phone-icon"></a>
+                </div>
+                <a href="https://drive.google.com/file/d/1EpxNsmurkTtJzBZbVUHrJgOuucrpaLIY/view?usp=sharing" target="_blank" class="button">Descargar curriculum</a>
+            </div>
+        </section>
+        <form action=" " method="POST" class="form" id="contact">
+        <h2 class="title">CONTACTAME</h2>
+        <p>Si está interesado en trabajar conmigo en su próximo proyecto, no dude en ponerse en contacto conmigo.</p>
+            <label for="form-name">
+                Nombre completo
+                    <input required name="name" id="form-name" type="text" placeholder="Tu nombre">
+                </label>
+                <label for="form-email">
+                Correo electrónico
+                <input required name="email" id="form-email" type="email" placeholder="Tu correo electrónico">
+            </label>
+            <label for="form-message">
+                Mensaje
+                <textarea required name="message" id="form-message" cols="30" rows="7" placeholder="Tu mensaje"></textarea>
+            </label>
+            <button class="button" type="submit">Enviar mensaje</button>
+        </form>
+        <footer class="footer">
+            <p> © Copyright 2021 - Todos los derechos reservados.</p>
+        </footer>
+    </div>
+    
+    <script>
+        const $form = document.querySelector('#contact')
+
+        $form.addEventListener('submit', handleSubmit)
+
+        async function handleSubmit(event) {
+            event.preventDefault()
+            const form = new FormData(this)
+            const response = await fetch(this.action, {
+                method: this.method,
+                body: form,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            if (response.ok) {
+                this.reset()
+                alert('Gracias por contactarme, te escribiré pronto')
+            }
+        }
+    </script>    
+</body>
+</html>              
