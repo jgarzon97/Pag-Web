@@ -24,16 +24,16 @@
         </header>
         <section aria-label="main" class="hero" id="main">
             <div class="hero-image">
-                <img src="./img/fotoJorge01.png" alt="Profile picture" width="338" height="330">
+                <img src="./img/jgarzon.jpg" alt="Profile picture" width="338" height="330" class="img">
             </div>
             <div class="hero-description">
                 <h1>
-                    <span>¡Hola</span>
+                    <span>Hola</span>
                     <span>Soy Jorge Garzón!</span>
                 </h1>
                 <p>
-                    Desarrollador Web Jr me gusta mucho de la programación.
-                    Siempre buscando nuevas tecnologías por aprender.
+                    Web Developer Jr.
+                    me gusta pasar mi tiempo aprendiendo de alguna nueva tecnologías en el ambiento Tech.
                     Una frase que siempre tengo presente dice : Desafíate a ti mismo; eres el único que conduces tu crecimiento. 
                 </p>
                 <div class="social">
@@ -46,7 +46,7 @@
                 <a href="https://drive.google.com/file/d/1EpxNsmurkTtJzBZbVUHrJgOuucrpaLIY/view?usp=sharing" target="_blank" class="button">Descargar curriculum</a>
             </div>
         </section>
-        <form action=" " method="POST" class="form" id="contact">
+        <form action="enviar.php" method="POST" class="form" id="contact">
         <h2 class="title">CONTACTAME</h2>
         <p> Si está interesado en trabajar conmigo en su próximo proyecto, no dude en ponerse en contacto.</p>
             <label for="form-name">
@@ -55,7 +55,7 @@
                 </label>
                 <label for="form-email">
                 Correo electrónico
-                <input required name="email" id="form-email" type="email" placeholder="Tu correo electrónico">
+                <input required name="mail" id="form-email" type="email" placeholder="Tu correo electrónico">
             </label>
             <label for="form-message">
                 Mensaje
@@ -67,27 +67,5 @@
             <p> © Copyright 2021 - Todos los derechos reservados.</p>
         </footer>
     </div>
-    
-    <script>
-        const $form = document.querySelector('#contact')
-
-        $form.addEventListener('submit', handleSubmit)
-
-        async function handleSubmit(event) {
-            event.preventDefault()
-            const form = new FormData(this)
-            const response = await fetch(this.action, {
-                method: this.method,
-                body: form,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            if (response.ok) {
-                this.reset()
-                alert('Gracias por contactarme, te escribiré pronto')
-            }
-        }
-    </script>    
 </body>
 </html>              

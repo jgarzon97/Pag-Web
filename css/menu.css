@@ -19,7 +19,7 @@
     color: var(--purple);
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 800px){
     .menu {
         display: block;
     }

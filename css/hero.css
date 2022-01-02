@@ -20,12 +20,17 @@
     text-align: center;
 }
 
+.img {
+    border-radius: 50%;
+}
+
 .hero h1 {
     font: var(--headline3);
     margin: 0;
 }
 
 .hero h1 span:first-child {
+    text-align: center;
     font: var(--headline5);
     display: block;
 }
