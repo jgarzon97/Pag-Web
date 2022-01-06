@@ -12,6 +12,10 @@
     text-align: justify;
 }
 
+.hero-description h1 {
+    text-align: center;
+}
+
 .hero-social {
     padding-block-end: 24px;
 }
